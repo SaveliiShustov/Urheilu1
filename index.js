@@ -12,57 +12,74 @@ class Henkilo {
 }
 
 class Urheilija extends Henkilo {
-  linkkiKuvaan;
-  omapaino;
-  laji;
-  saavutukset;
-  constructor(etunimi, sukunimi, kutsumanimi, syntymävuosi) {
+  constructor(
+    etunimi,
+    sukunimi,
+    kutsumanimi,
+    syntymävuosi,
+    linkkiKuvaan,
+    omapaino,
+    laji,
+    saavutukset) {
     super(etunimi, sukunimi, kutsumanimi, syntymävuosi);
+    this._linkkiKuvaan = linkkiKuvaan;
+    this._omapaino = omapaino;
+    this._laji = laji;
+    this._saavutukset = saavutukset;
   }
 
   get linkkiKuvaan() {
-    return this.linkkiKuvaan;
+    return this._linkkiKuvaan;
   }
   get omapaino() {
-    return this.omapaino;
+    return this._omapaino;
   }
   get laji() {
-    return this.laji;
+    return this._laji;
   }
   get saavutukset() {
-    return this.saavutukset;
+    return this._saavutukset;
   }
 
   set linkkiKuvaan(linkkiKuvaan) {
-    this.linkkiKuvaan = linkkiKuvaan;
+    this._linkkiKuvaan = linkkiKuvaan;
   }
   set omapaino(omapaino) {
-    this.omapaino = omapaino;
+    this._omapaino = omapaino;
   }
   set laji(laji) {
-    this.laji = laji;
+    this._laji = laji;
   }
   set saavutukset(saavutukset) {
-    this.saavutukset = saavutukset;
+    this._saavutukset = saavutukset;
   }
 }
 
-const urheilija1 = new Urheilija("Kalle", "Virtanen", "Kalle", 1995);
-urheilija1.linkkiKuvaan = "https://esimerkilinkki.com/kalle.jpg";
-urheilija1.omapaino = 82;
-urheilija1.laji = "Jalkapallo";
-urheilija1.saavutukset = ["SM-kulta 2020", "Vuoden pelaaja 2021"];
+const urheilija1 = new Urheilija(
+  "Kalle",
+  "Virtanen",
+  "Kalle",
+  1995,
+  "https://esimerkilinkki.com/kalle.jpg",
+  82,
+  "Jalkapallo",
+  ["SM-kulta 2020", "Vuoden pelaaja 2021"]
+);
 
-const urheilija2 = new Urheilija("Anna Maria", "Korhonen", "Anna", 1998);
-
-urheilija2.linkkiKuvaan = "https://esimerkilinkki.com/anna.jpg";
-urheilija2.omapaino = 60;
-urheilija2.laji = "Yleisurheilu";
-urheilija2.saavutukset = ["EM-hopea 2022", "MM-pronssi 2023"];
+const urheilija2 = new Urheilija(
+  "Anna Maria",
+  "Korhonen",
+  "Anna",
+  1998,
+  "https://esimerkilinkki.com/anna.jpg",
+  60,
+  "Yleisurheilu",
+  ["EM-hopea 2022", "MM-pronssi 2023"]
+);
 
 // Testataan
 
 console.log(urheilija1);
 console.log(urheilija2);
 console.log(`${urheilija1.kutsumanimi} - ${urheilija1.omapaino} kg`);
-console.log(`${urheilija2.kutsumanimi} - ${urheilija1.saavutukset}`);
+console.log(`${urheilija2.kutsumanimi} - ${urheilija2.saavutukset}`);
